@@ -1,10 +1,11 @@
 # WiFi Watch
-Node.js script that watches WiFi connection in Mac OS in the background and auto-reconnects if it fails. The script watches only the network specified in `network.json`.
+Node.js script that watches WiFi connection in Mac OS in the background and auto-reconnects if it fails. The script watches only the network specified in file `network.json`.
 
 ### Usage
-`sudo node wifi-watch.js`
+1. Create file `network.json` next to `wifi-watch.js`. Put network settings there (see details below)
+2. Run `sudo node wifi-watch.js`
 
-### network.js
+### File network.json
  See `network-example.js` as an example
 ```json
 {
@@ -13,6 +14,7 @@ Node.js script that watches WiFi connection in Mac OS in the background and auto
   "device_name": "en0" 
 }
 ```
-`ssid` — WiFi network name  
-`password` — WiFi password  
-`device_name` — Mac OS airport interface, could be en0, en1, en2 ect. Run `networksetup -listallhardwareports` in terminal to find it
+##### Values
+* `ssid` -- name of a WiFi network that should be watched  
+* `password` -- WiFi password  
+* `device_name` -- Mac OS airport interface, could be en0, en1, en2 ect. Run `networksetup -listallhardwareports` in terminal to find it
