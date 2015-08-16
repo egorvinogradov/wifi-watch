@@ -27,7 +27,7 @@ var connectionInterval;
 function isHomeNetwork(callback){
   exec('networksetup -getairportnetwork ' + DEVICE_NAME, function(error, stdout, stderr){
     var network = stdout.replace('Current Wi-Fi Network: ', '').trim();
-    if (network === 'NETGEAR16') { 
+    if (network === HOME_NETWORK_SSID) { 
       console.log('Network status: Connected to home network;', new Date());
       callback(true);
     }
